@@ -42,9 +42,9 @@ passport.use(
       usernameField: "username",
       passwordField: "password",
     },
-    async (name, username, password, done) => {
+    async (username, password, done) => {
       try {
-        const user = await UserModel.create({ name, username, password });
+        const user = await UserModel.create({ username, password });
 
         return done(null, user);
       } catch (error) {
